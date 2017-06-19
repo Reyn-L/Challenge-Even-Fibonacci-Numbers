@@ -1,4 +1,5 @@
-/**
+/*jshint esversion: 6*/
+/*
  * Return the total sum of all even fibonacci numbers up to and including
  * the value given to you at `maxFibValue`
  *
@@ -7,10 +8,22 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
+  let newSum = 0;
+  let a = 0;
+  let b = 1;
+  for(let i = 0; i < maxFibValue; i = sum){
+    sum = a + b;
+    a = b;
+    b = sum;
+      if(sum % 2 === 0){
+        newSum += sum;
+      }
 
+
+  }
   // do your work here
 
-  return sum;
+  return newSum;
 }
 
 // bonus round
@@ -23,7 +36,7 @@ function _highestFibonacciNumber (maxFibValue){
   //do your work here
 
   return highest;
-};
+}
 
 /**
  * Do not modify code below.
