@@ -8,22 +8,21 @@
  */
 function _sumFibs( maxFibValue ) {
   var sum = 0;
-  let newSum = 0;
-  let a = 0;
-  let b = 1;
-  for(let i = 0; i < maxFibValue; i = sum){
-    sum = a + b;
-    a = b;
-    b = sum;
-      if(sum % 2 === 0){
-        newSum += sum;
+  fibCurrent = 0;
+  let fibOld = 0;
+  let fibNew = 1;
+  for(let i = 0; i < maxFibValue; i = fibCurrent){
+    fibCurrent = fibOld + fibNew;
+    fibOld = fibNew;
+    fibNew = fibCurrent;
+      if( fibCurrent % 2 === 0){
+        sum += fibCurrent;
       }
-
 
   }
   // do your work here
 
-  return newSum;
+  return sum;
 }
 
 // bonus round
@@ -46,3 +45,4 @@ module.exports = {
   sumFibs : _sumFibs,
   highestFibonacciNumber : _highestFibonacciNumber
 };
+
